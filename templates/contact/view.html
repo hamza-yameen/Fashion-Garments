@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class='text-center'>
+  {{title}}
+  <p>Hello,We're Working....</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      {{content}}
+      <div class="col-sm-6 col-12">
+        <form method="POST">{% csrf_token %}
+          {{form}}
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+<!--
+            <form method="POST">{% csrf_token %}
+              <input type="text" class="form-control" placeholder="Enter yout Name:" name="fullname">
+              <input type="email" class="form-control" placeholder="Enter yout Email:" name="email">
+              <textarea class="form-control" placeholder="Content" name="content"></textarea>
+              <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+            -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

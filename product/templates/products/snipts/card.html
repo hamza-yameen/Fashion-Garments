@@ -1,0 +1,13 @@
+<div class="card">
+    {% if instance.image %}
+    <a href="{{instance.get_absolute_url}}" class="card-link">
+        <img src="{{ instance.image.url }}" class="card-img-top" alt="{{instance.title}} logo">
+    </a>
+    {% endif %}
+  <div class="card-body">
+      <h5 class="card-title">{{ instance.title }}</h5>
+      <p class="card-text">{{ instance.description|linebreaks|truncatewords:14 }}</p>
+      <a href="{{instance.get_absolute_url}}" class="card-link">View</a>
+      <!-- <a href="{% url 'product:detail' slug=instance.slug %}" class="card-link">URL Shortcut</a> -->
+  </div>
+</div>
